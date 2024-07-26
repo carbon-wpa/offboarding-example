@@ -1,0 +1,84 @@
+<h5 mat-dialog-title>Offboard</h5>
+<mat-dialog-content>
+  <form [formGroup]="form">
+    <mat-form-field appearance="outline">
+      <mat-label>Receiver</mat-label>
+      <input matInput formControlName="receiver" placeholder="Receiver">
+      @if(form.get('receiver')?.hasError('required') && form.get('receiver')?.touched){
+      <mat-error>
+        Receiver is required
+      </mat-error>
+      }
+    </mat-form-field>
+
+ <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" placeholder="Email" type="email">
+   @if(form.get('email')?.hasError('required') && form.get('email')?.touched){
+      <mat-error>
+        Email is required
+      </mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Phone</mat-label>
+      <input matInput formControlName="phone" placeholder="Phone" type="tel">
+      @if(form.get('phone')?.hasError('required') && form.get('phone')?.touched) {
+      <mat-error>
+        Phone number is required
+      </mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Street Line</mat-label>
+      <input matInput formControlName="streetLine" placeholder="Street Line">
+      @if(form.get('streetLine')?.hasError('required') && form.get('streetLine')?.touched) {
+      <mat-error>
+        Street line is required
+      </mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="inline">
+      <mat-label>City</mat-label>
+      <input matInput formControlName="city" placeholder="City">
+      @if(form.get('city')?.hasError('required') && form.get('city')?.touched){
+      <mat-error>
+        City is required
+      </mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="inline">
+      <mat-label>Postal Code</mat-label>
+      <input matInput formControlName="postalCode" placeholder="Postal Code">
+      @if(form.get('postalCode')?.hasError('required') && form.get('postalCode')?.touched){
+      <mat-error>
+        Postal code is required
+      </mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Country</mat-label>
+      <input matInput formControlName="country" placeholder="Country">
+      @if(form.get('country')?.hasError('required') && form.get('country')?.touched){
+      <mat-error>
+        Country is required
+      </mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Notes</mat-label>
+      <textarea matInput formControlName="notes" placeholder="Notes"></textarea>
+    </mat-form-field>
+  </form>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="cancel()">Cancel</button>
+  <button mat-button (click)="confirm()" [disabled]="form.invalid">Confirm</button>
+</mat-dialog-actions>

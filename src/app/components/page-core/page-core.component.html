@@ -1,0 +1,19 @@
+<app-header (menuToggle)="drawer.toggle()"></app-header>
+
+<mat-drawer-container autosize class="drawer">
+  <mat-drawer #drawer mode="side">
+
+    <!-- todo add menu componet here -->
+    Menu will be here
+
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+
+    <router-outlet/>
+
+    <app-footer></app-footer>
+  </div>
+
+</mat-drawer-container>
+

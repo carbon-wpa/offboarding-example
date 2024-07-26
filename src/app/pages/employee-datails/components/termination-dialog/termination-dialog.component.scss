@@ -1,0 +1,17 @@
+$gap-value: 8px;
+
+form {
+  padding-top: $gap-value;
+  display: flex;
+  flex-wrap: wrap;
+
+  mat-form-field {
+    display: block;
+    width: 100%;
+    padding: 0 $gap-value;
+  }
+
+  .inline {
+    width: calc(50% - 2 * $gap-value);
+  }
+}

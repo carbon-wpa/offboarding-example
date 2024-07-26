@@ -1,0 +1,21 @@
+$gap-value: 16px;
+
+mat-list-item {
+  height: auto;
+}
+
+.data-items {
+  display: flex;
+  flex-wrap: wrap;
+  padding: $gap-value 0;
+  gap: $gap-value;
+
+  div {
+    width: calc(25% - $gap-value);
+  }
+}
+
+mat-accordion {
+  padding-top: $gap-value;
+  display: block;
+}

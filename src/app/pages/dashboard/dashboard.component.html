@@ -1,0 +1,50 @@
+<div class="page-header">
+  <h5>Employees</h5>
+  <mat-form-field appearance="outline">
+    <mat-label>Filter Employees</mat-label>
+    <input matInput type="text" [(ngModel)]="filterValue" (ngModelChange)="filterEmployees()">
+    @if (filterValue) {
+    <button matSuffix mat-icon-button aria-label="Clear" (click)="clearFilter()">
+      <mat-icon>close</mat-icon>
+    </button>
+    }
+  </mat-form-field>
+</div>
+
+<mat-card appearance="outlined">
+  <mat-card-content>
+
+    <table mat-table [dataSource]="employees">
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Full Name</th>
+        <td mat-cell *matCellDef="let element"><b>{{element.name}}</b></td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> E-mail</th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="department">
+        <th mat-header-cell *matHeaderCellDef> Department</th>
+        <td mat-cell *matCellDef="let element"> {{element.department}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="equipment">
+        <th mat-header-cell *matHeaderCellDef> Equipment</th>
+        <td mat-cell *matCellDef="let element"> {{element.equipments | equipment}} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status</th>
+        <td mat-cell *matCellDef="let element"> {{element | employeeStatus : employeeService.terminatedEmployees }} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="rowSelected(row)" class="row"></tr>
+    </table>
+
+  </mat-card-content>
+</mat-card>

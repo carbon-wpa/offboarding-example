@@ -1,0 +1,53 @@
+[
+  {
+    "id": "1",
+    "name": "John Doe",
+    "department": "Engineering",
+    "status": "ACTIVE",
+    "email": "some.email@wp.pl",
+    "equipments": [
+      {
+        "id": "1",
+        "name": "Macbook air"
+      },
+      {
+        "id": "2",
+        "name": "Magic Mouse"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Jan Kowalski",
+    "department": "Engineering",
+    "status": "ACTIVE",
+    "email": "jan@exmaple.com",
+    "equipments": [
+      {
+        "id": "1",
+        "name": "Macbook pro"
+      },
+      {
+        "id": "2",
+        "name": "iphone"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Janusz Nowak",
+    "department": "Sales Manager",
+    "status": "ACTIVE",
+    "email": "jan@exmaple.com",
+    "equipments": [
+      {
+        "id": "1",
+        "name": "Passat 1.9 TDI"
+      },
+      {
+        "id": "2",
+        "name": "Kąkuter Pitera"
+      }
+    ]
+  }
+]

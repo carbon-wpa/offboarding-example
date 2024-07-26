@@ -1,0 +1,50 @@
+<div class="page-header">
+  <h5>{{employee?.name}}</h5>
+  <button mat-raised-button (click)="terminateEmployee()">Offboard</button>
+</div>
+
+
+<mat-card appearance="outlined">
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item>Employees Details</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <div class="data-items">
+          <div>
+            <b>Fullname:</b>
+          </div>
+          <div>
+            {{employee?.name}}
+          </div>
+          <div>
+            <b>E-mail:</b>
+          </div>
+          <div>
+            {{employee?.email}}
+          </div>
+          <div>
+            <b>Department:</b>
+          </div>
+          <div>
+            {{employee?.department}}
+          </div>
+        </div>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>Equipment</mat-list-item>
+      <mat-divider></mat-divider>
+
+      <mat-accordion appearance="outlined">
+        @for(equipment of employee?.equipments; track equipment.id) {
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title> Item {{equipment.id}}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>{{equipment.name}}</p>
+    </mat-expansion-panel>
+        }
+      </mat-accordion>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
